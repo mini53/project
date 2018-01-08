@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--  classpath를 인식하는 애들은 src 아래에 둬야함 -->
+<configuration>
+	<typeAliases>
+		<typeAlias alias = "user" type = "project.vo.uservo"/>
+	</typeAliases>
+
+<mappers>
+	<mapper resource = "/project/common/user-mapping.xml"/>
+</mappers>
+</configuration>

@@ -4,7 +4,7 @@ import java.util.Date;
 
 // 한 스터디가 생성 되었을시 매 회차에 따른 각 멤버별 출결관리 테이블
 // 팀 스케줄러에 띄워주기 위함.
-public class absentEntity {
+public class absentDto {
 	private int id; // team의 고유id , team 테이블에서 가져옴
 	private int round; // 스터디의 해당 횟차, round 테이블에서 가져옴
 	private String userid; // 해당 id 또는 등록한 id(등록자는 팀 리더만 가능)

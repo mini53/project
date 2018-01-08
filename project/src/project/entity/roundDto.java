@@ -4,7 +4,7 @@ import java.util.Date;
 
 //각 팀이 매 회 스터디 후 결과를 남기는 테이블, 스케줄러와 연동 됨.
 
-public class roundEntity {
+public class roundDto {
 	private int id; // teamid 
 	private int round; // 해당 미팅 순차
 	private int status; // 디폴트 0, 취소(삭제) 9

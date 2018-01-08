@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +9,7 @@
 </head>
 <body>
 <h3> hello Builders</h3>
-<a href ="/project/loginform.do">go login</a>
+<a href ="/loginform.do">go login</a>
+ 
 </body>
 </html>

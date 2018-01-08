@@ -2,7 +2,7 @@ package project.entity;
 
 import java.util.Date;
 
-public class codeEntity {
+public class codeDto {
 	
 	private String code;
 	private int status;

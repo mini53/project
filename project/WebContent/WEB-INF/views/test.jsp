@@ -8,14 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3> hello</h3>
-<c:if test="${loginfo == 'success'}">
-	<h2>${sessionScope.userid}(${sessionScope.name})님 환영합니다.</h2>
-</c:if>
-<c:if test="${loginfo == 'fail'}">
-	<h2>당신은 누구 입니까</h2>
-</c:if>
+<c:choose>
+    <c:when test="${sessionScope.userid == null}">
+        <%-- <a href="${path}/member/login.do">로그인</a> --%>
+    </c:when>
+    <c:otherwise>
+        ${sessionScope.name}님이 로그인중입니다.
+        <a href="${path}/member/logout.do">로그아웃</a>
+    </c:otherwise>
+</c:choose>
 
-<a href = "/test.do"> test로 이동</a>
 </body>
 </html>
