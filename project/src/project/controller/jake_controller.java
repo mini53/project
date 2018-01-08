@@ -15,7 +15,7 @@ import project.dao.userdao;
 import project.vo.uservo;
 
 @Controller
-public class controller {
+public class jake_controller {
 	@Autowired
 	private userBiz ub;
 	@RequestMapping(value = "/loginform.do", method = RequestMethod.GET)
