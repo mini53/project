@@ -14,7 +14,7 @@ import project.dao.userdao;
 public class homecon {
 
 
-	@RequestMapping(value ="/loginform.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/loginform.do", method = RequestMethod.GET)
 	public String loginform(Model model) {
 		System.out.println("È®ÀÎ¿ë");
 		String str = "heool";
@@ -24,7 +24,9 @@ public class homecon {
 	
 	@RequestMapping(value ="/login.do", method = RequestMethod.GET)
 	public ModelAndView loginexcute(@RequestParam("id") String Id, @RequestParam("pwd") String pwd) {
+		
 		String id = Id;
+		
 		ModelAndView mv = new ModelAndView("index", "userid", Id);
 		return mv;
 	}

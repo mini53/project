@@ -8,6 +8,6 @@
 </head>
 <body>
 <h3> hello Builders</h3>
-<a href ="/practice/loginform.do">go login</a>
+<a href ="/project/loginform.do">go login</a>
 </body>
 </html>

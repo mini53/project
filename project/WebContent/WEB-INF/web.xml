@@ -23,6 +23,7 @@ id="WebApp_ID" version="3.1">
 		<url-pattern>/*</url-pattern>
 		<!-- filter적용을 모두에세 하기 위해서 전체를 적용함 -->
 	</filter-mapping>
+	
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -31,7 +32,6 @@ id="WebApp_ID" version="3.1">
 			<param-value>/WEB-INF/config/springmvc-servlet.xml</param-value>
 		</init-param>
 	</servlet>
-	
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.do</url-pattern>

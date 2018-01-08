@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>여기는 로그인페이지 입니다</h3>
-<form action="/practice/login.do">
+<form action="/project/login.do">
 	<input type ="text" value = "ID" name = "id">
 	<input type ="text" value = "Password" name = "pwd">
 	<input type = "submit" value = "Login">
