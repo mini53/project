@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--   create table users(
+userid   varchar2(30) primary key,    
+status   number(1)   default 0,
+pwd	     varchar2(16),
+name	 varchar2(20),
+category varchar2(6),
+gender	 number(1) constraint ck_gender check ( gender in ( 1,2) ),
+business varchar2(6),
+dept	 varchar2(6),
+edate	 date default sysdate,
+mdate	 date,
+cdate	 date );
+ -->
+<mapper namespace="user">
+	<insert id="insertUser" parameterType="user">
+		insert into users(userid, pwd, name, gender)
+		values(#{userid}, #{pwd}, #{name}, #{gender})
+	</insert>
+	
+	<select id ="loginCheck" parameterType = "user" resultType = "java.lang.String">
+		select name from users 
+			where userid = #{userid} and
+					pwd = #{pwd} 
+	</select>
+	
+	<!-- 
+	
+	<select id="selectCus" resultType="customer">
+		select * from tb_customer
+	</select>
+
+	<select id="searchCus" parameterType="java.lang.String"
+		resultType="customer">
+		select * from tb_customer
+		where id =#{id}
+	</select> -->
+</mapper>

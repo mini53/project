@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,6 +11,10 @@
 	<link rel="stylesheet" href="css/project.css">
 </head>
 <body>
+<<<<<<< HEAD:project/WebContent/jake_index.jsp
+<h3> hello Builders</h3>
+<a href ="/loginform.do">go login</a>
+ 
 	<style type="text/css">
 		.jumbotron {
 			background-image: url("images/main.png"); 
@@ -31,18 +35,18 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="introduce.do">ì†Œê°œ<span class="sr-only"></span></a></li>
-					<li><a href="mypage.do">ë§ˆì´íŽ˜ì´ì§€<span class="sr-only"></span></a></li>
-					<li><a href="content.do">ìŠ¤í„°ë”” ë³´ê¸°<span class="sr-only"></span></a></li>
-					<li><a href="board.do">ìžìœ ê²Œì‹œíŒ<span class="sr-only"></span></a></li>
-					<li><a href="contact.do">ë¬¸ì˜í•˜ê¸°<span class="sr-only"></span></a></li>
+					<li><a href="introduce.do">¼Ò°³<span class="sr-only"></span></a></li>
+					<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö<span class="sr-only"></span></a></li>
+					<li><a href="content.do">½ºÅÍµð º¸±â<span class="sr-only"></span></a></li>
+					<li><a href="board.do">ÀÚÀ¯°Ô½ÃÆÇ<span class="sr-only"></span></a></li>
+					<li><a href="contact.do">¹®ÀÇÇÏ±â<span class="sr-only"></span></a></li>
 					
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="loginform.do">ë¡œê·¸ì¸</a></li>
+					<li><a href="loginform.do">·Î±×ÀÎ</a></li>
 					
-					<li><a href="joinForm.do">íšŒì›ê°€ìž…</a></li>
+					<li><a href="joinForm.do">È¸¿ø°¡ÀÔ</a></li>
 				</ul>
 			</div>
 		</div>
@@ -51,14 +55,14 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1 class="text-left">Build UP</h1>
-			<p class="text-left">ìŠ¤í„°ë”” í”Œëž«í¼</p>
-			<p class="text-left"><a class="btn btn-primary btn=lg" href="study.do" role="button">íŒ€ ë§Œë“¤ëŸ¬ ê°€ê¸°</a></p>
+			<p class="text-left">½ºÅÍµð ÇÃ·§Æû</p>
+			<p class="text-left"><a class="btn btn-primary btn=lg" href="study.do" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>
 		</div> 
 		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
-				&nbsp;&nbsp;ì§„í–‰ì¤‘ì¸ ìŠ¤í„°ë””</h3>
+				&nbsp;&nbsp;ÁøÇàÁßÀÎ ½ºÅÍµð</h3>
 
 			</div>
 			<div class="panel-body">
@@ -85,7 +89,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
-				&nbsp;&nbsp;ëª¨ì§‘ì¤‘ì¸ ìŠ¤í„°ë””<a class="btn btn-primary btn-md pull-right" href="content.do" role="button" >ìžì„¸ížˆ ë³´ê¸°</a></h3>
+				&nbsp;&nbsp;¸ðÁýÁßÀÎ ½ºÅÍµð<a class="btn btn-primary btn-md pull-right" href="content.do" role="button" >ÀÚ¼¼È÷ º¸±â</a></h3>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -94,14 +98,14 @@
     						<br>
       						<img src="<c:url value="images/java.png"/>" align="left">
       						<div class="caption">
-        						<h3>&nbsp;ìžë°” ì¤‘ê¸‰ ìŠ¤í„°ë””</h3>
+        						<h3>&nbsp;ÀÚ¹Ù Áß±Þ ½ºÅÍµð</h3>
         						<p>
         							<span class="label label-danger">#JAVA</span>
-									<span class="label label-primary">#í•©ì •ì—­</span>
-									<span class="label label-success">#í† ì¼,3~5ì‹œ</span>
-									<span class="label label-warning">#4ì£¼</span>
-									<span class="label label-info">#4ëª…ì´í•˜</span>
-									<span class="label label-default">#ì—´ì‹¬ížˆ í•˜ì‹¤ë¶„ë§Œ</span>
+									<span class="label label-primary">#ÇÕÁ¤¿ª</span>
+									<span class="label label-success">#ÅäÀÏ,3~5½Ã</span>
+									<span class="label label-warning">#4ÁÖ</span>
+									<span class="label label-info">#4¸íÀÌÇÏ</span>
+									<span class="label label-default">#¿­½ÉÈ÷ ÇÏ½ÇºÐ¸¸</span>
 								</p>
      					 	</div>
    						</div>
@@ -111,13 +115,13 @@
     						<br>
       						<img src="<c:url value="images/spring.png"/>" align="left">
       						<div class="caption">
-        						<h3>&nbsp;ìŠ¤í”„ë§ ì™„ì„±</h3>
+        						<h3>&nbsp;½ºÇÁ¸µ ¿Ï¼º</h3>
         						<p>
         							<span class="label label-danger">#Spring</span>
-									<span class="label label-primary">#ì‹ ì´Œ</span>
-									<span class="label label-success">#ê¸ˆ,7~9ì‹œ</span>
-									<span class="label label-warning">#3ì£¼</span>
-									<span class="label label-info">#3ëª…</span>
+									<span class="label label-primary">#½ÅÃÌ</span>
+									<span class="label label-success">#±Ý,7~9½Ã</span>
+									<span class="label label-warning">#3ÁÖ</span>
+									<span class="label label-info">#3¸í</span>
 									<span class="label label-default">#:)</span>
 								</p>
      				 		</div>
@@ -128,14 +132,14 @@
     						<br>
       						<img src="<c:url value="images/python.png"/>" align="left">
       						<div class="caption">
-        						<h3>&nbsp;íŒŒì´ì¬ ì´ˆê¸‰</h3>
+        						<h3>&nbsp;ÆÄÀÌ½ã ÃÊ±Þ</h3>
         						<p>
         							<span class="label label-danger">#Python</span>
-									<span class="label label-primary">#ê°•ë‚¨ì—­</span>
-									<span class="label label-success">#í† ,1~5ì‹œ</span>
-									<span class="label label-warning">#4ì£¼</span>
-									<span class="label label-info">#4ëª…</span>
-									<span class="label label-default">#ì²«ì‹œìž‘</span>
+									<span class="label label-primary">#°­³²¿ª</span>
+									<span class="label label-success">#Åä,1~5½Ã</span>
+									<span class="label label-warning">#4ÁÖ</span>
+									<span class="label label-info">#4¸í</span>
+									<span class="label label-default">#Ã¹½ÃÀÛ</span>
 								</p>
      				 		</div>
    						</div>
@@ -148,22 +152,22 @@
 		<div class="container">
 			<br>
 			<div class="row">
-				<div class="col-sm-2" style="text-align:  center;"><h5>Copyright &copy; 2018</h5><h5>ê¹€ìž¥í›ˆ</h5></div>
-				<div class="col-sm-4"><h4>ëŒ€í‘œìž ì†Œê°œ</h4><p>ì €ëŠ” í”Œë ˆì´ë°ì´í„° ìˆ˜ê°•ìƒ ê¹€ìž¥í›ˆ ìž…ë‹ˆë‹¤. ë¹…ë°ì´í„° ì—”ì§€ë‹ˆì–´ ê³¼ì •ì„ ìˆ˜ê°•í•˜ê³  ìžˆìŠµë‹ˆë‹¤. </p></div>
-				<div class="col-sm-2"><h4 style="text-align: center">ë‚´ë¹„ê²Œì´ì…˜</h4>
+				<div class="col-sm-2" style="text-align:  center;"><h5>Copyright &copy; 2018</h5><h5>±èÀåÈÆ</h5></div>
+				<div class="col-sm-4"><h4>´ëÇ¥ÀÚ ¼Ò°³</h4><p>Àú´Â ÇÃ·¹ÀÌµ¥ÀÌÅÍ ¼ö°­»ý ±èÀåÈÆ ÀÔ´Ï´Ù. ºòµ¥ÀÌÅÍ ¿£Áö´Ï¾î °úÁ¤À» ¼ö°­ÇÏ°í ÀÖ½À´Ï´Ù. </p></div>
+				<div class="col-sm-2"><h4 style="text-align: center">³»ºñ°ÔÀÌ¼Ç</h4>
 					<div class="list-group">
-						<a href="index.do" class="list-group-item">ì†Œê°œ</a>
-						<a href="instructor.do" class="list-group-item">ìš´ì˜ì§„</a>
+						<a href="index.do" class="list-group-item">¼Ò°³</a>
+						<a href="instructor.do" class="list-group-item">¿î¿µÁø</a>
 					</div>
 				</div>
 				<div class="col-sm-2"><h4 style="text-align: center">SNS</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">íŽ˜ì´ìŠ¤ë¶</a>
-						<a href="#" class="list-group-item">ìœ íŠœë¸Œ</a>
-						<a href="#" class="list-group-item">ë„¤ì´ë²„</a>
+						<a href="#" class="list-group-item">ÆäÀÌ½ººÏ</a>
+						<a href="#" class="list-group-item">À¯Æ©ºê</a>
+						<a href="#" class="list-group-item">³×ÀÌ¹ö</a>
 					</div>
 				</div>
-				<div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp; by ê¹€ì§„í˜¸</h4>
+				<div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp; by ±èÁøÈ£</h4>
 				</div>
 			</div>
 		</div>
@@ -173,12 +177,12 @@
 			<div class="mdoal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="modal-header">
-						ì½”ë”© ë¶€ìŠ¤í„°ì˜ íŠ¹ì§•
+						ÄÚµù ºÎ½ºÅÍÀÇ Æ¯Â¡
 						<button class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body" style="text-align: center;">
-						ì €í¬ í”Œëž«í¼ì€ <br>
-						íŠ¹ížˆ ì‹¤ì‹œê°„<br><br>
+						ÀúÈñ ÇÃ·§ÆûÀº <br>
+						Æ¯È÷ ½Ç½Ã°£<br><br>
 						<img src="images/youtube.png" id="imagepreview" style="width: 256px; height: 256px;">
 					</div>
 				</div>

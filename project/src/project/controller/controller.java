@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import project.dao.userdao;
 
 @Controller
-public class homecon {
+public class controller {
 
 	@RequestMapping(value="/introduce.do", method = RequestMethod.GET)
 	public String introduce() {

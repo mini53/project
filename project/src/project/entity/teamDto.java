@@ -4,7 +4,7 @@ import java.util.Date;
 
 // 팀을 모집할때 생성되는 테이블
 // 팀이 생성 되더라도 제대로 만들어 지는 경우 또는 엎어지는 경우가 있음
-public class teamEntity {
+public class teamDto {
 	private int id; // 팀생성시 만들어지는 고유id 값
 	private String tname; // 팀의 고유 이름, 유니크!
 	private int status; // 팀의상태, 모집마감 =0, 모집중1 , 실패3, 강제종료:5, 정상종료7, 취소(삭제) 9

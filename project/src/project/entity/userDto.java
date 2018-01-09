@@ -2,7 +2,7 @@ package project.entity;
 
 import java.util.Date;
 
-public class userEntity {
+public class userDto {
 	private String userid; // 회원 아이디
 	private int status; // 정상 0, 탈회9, 관리자 8
 	private String pwd; // 
