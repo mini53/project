@@ -10,15 +10,6 @@
 	<link rel="stylesheet" href="css/project.css">
 </head>
 <body>
-<<<<<<< HEAD
-<h3>����� �α��������� �Դϴ�</h3>
-<form action="/login.do">
-	<input type ="text" value = "ID" name = "userid">
-	<input type ="text" value = "Password" name = "pwd">
-	<input type = "submit" value = "Login">
-</form>
-<a href = "/register.do"> go register</a>
-=======
 	<style type="text/css">
 .panel-login {
 	border-color: #ccc;
@@ -42,7 +33,7 @@
 	transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a.active{
-	color: #59B2E0;
+	color: #029f5b;
 	font-size: 18px;
 }
 .panel-login>.panel-heading hr{
@@ -157,7 +148,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-12">
-								<a href="#" class="active" id="login-form-link">로그인</a>
+								<a href="#" class="active" id="register-form-link">회원가입</a>
 							</div>
 						</div>
 						<hr>
@@ -165,30 +156,23 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="아이디" value="">
 									</div>
 									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="이메일" value="">
+									</div>
+									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
 									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> 아이디 기억하기</label>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="비밀번호 재입력">
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="로그인">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">비밀번호를 잊어버리셨나요?</a>
-												</div>
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="가입하기">
 											</div>
 										</div>
 									</div>
@@ -245,6 +229,5 @@
 	});
 });
 	</script>
->>>>>>> master
 </body>
 </html>
