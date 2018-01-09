@@ -6,7 +6,7 @@
 <!--  classpath를 인식하는 애들은 src 아래에 둬야함 -->
 <configuration>
 	<typeAliases>
-		<typeAlias alias = "user" type = "project.vo.uservo"/>
+		<typeAlias alias = "user" type = "project.vo.UserVo"/>
 	</typeAliases>
 
 <mappers>

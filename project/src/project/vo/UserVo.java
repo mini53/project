@@ -1,7 +1,7 @@
 package project.vo;
 
 
-public class uservo {
+public class UserVo {
 	
 	private String userid;
 	private String pwd;

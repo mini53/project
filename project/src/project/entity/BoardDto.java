@@ -5,7 +5,7 @@ import java.util.Date;
 //게시판 테이블
 //댓글, 자유게시판, 질문게시판, 공지,전부 커버 하기 위함
 // 팀 게시판은 따로
-public class boardDto {
+public class BoardDto {
 	private int bid; // 보드 테이블 고유값
 	private int id; // teamid, team테이블에서 가져온다
 	private int status; // 기본 0 값, 삭제시 9값

@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import project.vo.uservo;
+import project.vo.UserVo;
 
 @Repository
-public class userdao {
+public class UserDao {
 	
 	@Autowired
 	private SqlSessionFactory factory;
 	
-	public int insert(uservo vo) {
+	public int insert(UserVo vo) {
 		int num = 0;
 		SqlSession session = factory.openSession();
 		try {
@@ -33,7 +33,7 @@ public class userdao {
 		return num;
 	}
 
-	public boolean loginCheck(uservo vo) {
+	public boolean loginCheck(UserVo vo) {
 		SqlSession session = factory.openSession();
 		String name = null;
 		try {

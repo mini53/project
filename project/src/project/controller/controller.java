@@ -1,14 +1,7 @@
 package project.controller;
 
-<<<<<<< HEAD
 
 import javax.servlet.http.HttpSession;
-
-
-=======
-import javax.servlet.http.HttpSession;
-
->>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,20 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-<<<<<<< HEAD
-import project.dao.userdao;
-import project.biz.userBiz;
-=======
 
-import project.biz.userBiz;
-import project.dao.userdao;
->>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
-import project.vo.uservo;
+import project.biz.UserBiz;
+import project.dao.UserDao;
+import project.vo.UserVo;
 
 @Controller
 public class controller {
 	@Autowired
-	private userBiz ub;
+	private UserBiz userbiz;
 
 	@RequestMapping(value="/introduce.do", method = RequestMethod.GET)
 	public String introduce() {
@@ -84,16 +72,12 @@ public class controller {
 		System.out.println("loginform RequestMapping");
 		return "loginform";
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
 	@RequestMapping(value ="/login.do", method = RequestMethod.GET)
-	public ModelAndView loginexcute(uservo vo, HttpSession session) {
+	public ModelAndView loginexcute(UserVo vo, HttpSession session) {
 		System.out.println("login.do " + vo.toString());
 		ModelAndView mav = new ModelAndView();
-		boolean name = ub.loginCheck(vo, session);
+		boolean name = userbiz.loginCheck(vo, session);
 		if(name == true) {
 			mav.setViewName("index");
 			mav.addObject("loginfo", "success");
@@ -112,9 +96,9 @@ public class controller {
 	}
 	
 	@RequestMapping(value ="/userRegister.do", method = RequestMethod.POST)
-	public String userRegister(uservo vo) {
+	public String userRegister(UserVo vo) {
 		System.out.println("userRegister");
-		int num = ub.userInsert(vo);
+		int num = userbiz.userInsert(vo);
 		return "loginform";
 	}
 	

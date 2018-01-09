@@ -1,5 +1,5 @@
 package project.vo;
 
-public class boardvo {
+public class BoardVo {
 
 }

@@ -4,7 +4,7 @@ import java.util.Date;
 
 // 각 회원들의 점수를 토대화 하는 테이블
 // 점수 척도를 더 구체화 해야함.
-public class scoreDto {
+public class ScoreDto {
 	private int id; // 해당 팀 id, 
 	private String userid; // 평가를 하는 유저
 	private String puserid; // 평가를 받는 유저
