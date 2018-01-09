@@ -32,7 +32,16 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
-					<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
+					<c:choose>
+						<c:when test="${userid != null}">
+						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
+						</c:when>
+						<c:when test="${userid == null}">
+							<li><a class="btn btn-default" data-target="#modal" data-toggle="modal">
+							마이페이지<span class="sr-only"></span></a></li>
+							<!--  모달 크기 및 내용 수정 -->
+						</c:when>
+					</c:choose>
 					<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
 					<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
 					<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>

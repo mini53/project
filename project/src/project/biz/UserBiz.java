@@ -23,7 +23,6 @@ public class UserBiz {
 		return num;
 	}
 
-
 /*	public boolean loginCheck(UserVo vo, HttpSession session) {
 		System.out.println("biz " + vo.toString());
 		boolean result = ud.loginCheck(vo);
@@ -34,5 +33,15 @@ public class UserBiz {
 	        } 
 	     return result;
 	}*/
+	
 
+	public String UserLogin(UserVo vo, HttpSession session) {
+		String str = userdao.UserLogin(vo);
+		if(str != null) {
+			System.out.println(str);
+			session.setAttribute("userid", str);
+		}
+		return str;
+	}
+	
 }

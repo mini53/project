@@ -156,12 +156,14 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+								<form id="login-form" action="/UserLogin.do" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="아이디" value="">
+										<input type="text" name="userid" id="userid" 
+										tabindex="1" class="form-control" placeholder="아이디" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
+										<input type="password" name="pwd" id="pwd" 
+										tabindex="2" class="form-control" placeholder="비밀번호">
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -170,7 +172,8 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="로그인">
+												<input type="submit" name="login-submit" id="login-submit" 
+												tabindex="4" class="form-control btn btn-login" value="로그인">
 											</div>
 										</div>
 									</div>

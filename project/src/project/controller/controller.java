@@ -102,7 +102,7 @@ public class controller {
 		if (num != 0) {
 			return "index";
 		}else {
-			return "loginform";
+			return "joinform";
 		}
 	}
 	
@@ -112,4 +112,15 @@ public class controller {
 	}*/
 	
 	// 로그인 기능
+	@RequestMapping(value = "/UserLogin.do", method = RequestMethod.POST)
+	public ModelAndView UserLogin(UserVo vo, HttpSession session) {
+		String str = userbiz.UserLogin(vo, session);
+		if(str != null ) {
+			ModelAndView mv = new ModelAndView("index", "Check", "success");
+			return mv;
+		}else {
+			ModelAndView mv = new ModelAndView("loginform", "Check", "fail");
+			return mv;
+		}
+	}
 }

@@ -32,18 +32,31 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
-					<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
+					<li>
+					<c:choose>
+						<c:when test="${userid != null}">
+							<a href="mypage.do">마이메세지<span class="sr-only"></span></a></li>
+						</c:when>
+						<c:when test="${userid == null}">
+							<input type="button" onclick="alert('메시지 박스 예제');">
+							마이메세지<span class="sr-only"></span></a></li>
+						</c:when>
+					</c:choose>
 					<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
 					<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
-					<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
-					
+					<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>	
 				</ul>
-				
-				<ul class="nav navbar-nav navbar-right">
+				<c:choose>
+					<c:when test="${Check == 'success'}">
+						<h3> ${userid} 님 환영 합니다</h3>
+					</c:when>
+					<c:when test="${Check == 'fail'}">
+						<ul class="nav navbar-nav navbar-right">
 					<li><a href="loginform.do">로그인</a></li>
-					
-					<li><a href="joinform.do">회원가입</a></li>
-				</ul>
+					<li><a href="joinform.do">회원가입</a></li>		
+						</ul>
+					</c:when>	
+				</c:choose>
 			</div>
 		</div>
 	</nav>

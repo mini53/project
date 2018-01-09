@@ -22,8 +22,8 @@ cdate	 date );
 		values(#{userid}, #{pwd}, #{username}, #{gender}, #{category}, #{business}, #{job})
 	</insert>
 	
-	<select id ="loginCheck" parameterType = "user" resultType = "java.lang.String">
-		select name from users 
+	<select id ="UserLogin" parameterType = "user" resultType = "java.lang.String">
+		select userid from users 
 			where userid = #{userid} and
 					pwd = #{pwd} 
 	</select>

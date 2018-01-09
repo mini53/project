@@ -78,7 +78,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						<span class="glyphicon glyphicon-tags"></span>
-						&nbsp;&nbsp;김장훈 강사
+						&nbsp;&nbsp; 김장훈
 					</h3>
 				</div>
 				<div class="panel-body">

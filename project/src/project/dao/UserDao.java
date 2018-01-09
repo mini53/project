@@ -15,6 +15,11 @@ public class UserDao {
 	@Autowired
 	private SqlSessionFactory factory;
 	
+	public SqlSession driver() {
+		SqlSession session = factory.openSession();
+		return session;
+	} // sqlseeion 계속 쓰기 싫어서 만든 method
+	
 	public int insert(UserVo vo) {
 		int num = 0;
 		SqlSession session = factory.openSession();
@@ -49,6 +54,19 @@ public class UserDao {
 			session.close();
 		}
 		return (name==null)? false : true;
+	}
+
+	public String UserLogin(UserVo vo) {
+		String str = null;
+		try {
+			str = driver().selectOne("UserLogin", vo);
+			System.out.println("UserLogin check");
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}finally{
+			driver().close();
+		}
+		return str;
 	}
 
 }
