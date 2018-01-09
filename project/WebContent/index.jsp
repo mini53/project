@@ -11,10 +11,6 @@
 	<link rel="stylesheet" href="css/project.css">
 </head>
 <body>
-<<<<<<< HEAD:project/WebContent/jake_index.jsp
-<h3> hello Builders</h3>
-<a href ="/loginform.do">go login</a>
- 
 	<style type="text/css">
 		.jumbotron {
 			background-image: url("images/main.png"); 
@@ -46,7 +42,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="loginform.do">로그인</a></li>
 					
-					<li><a href="joinForm.do">회원가입</a></li>
+					<li><a href="joinform.do">회원가입</a></li>
 				</ul>
 			</div>
 		</div>

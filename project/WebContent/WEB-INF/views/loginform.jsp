@@ -10,15 +10,6 @@
 	<link rel="stylesheet" href="css/project.css">
 </head>
 <body>
-<<<<<<< HEAD
-<h3>여기는 로그인페이지 입니다</h3>
-<form action="/login.do">
-	<input type ="text" value = "ID" name = "userid">
-	<input type ="text" value = "Password" name = "pwd">
-	<input type = "submit" value = "Login">
-</form>
-<a href = "/register.do"> go register</a>
-=======
 	<style type="text/css">
 .panel-login {
 	border-color: #ccc;
