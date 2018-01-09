@@ -5,8 +5,12 @@ public class UserVo {
 	
 	private String userid;
 	private String pwd;
-	private String name;
+	private String username;
 	private String gender;
+	private String category;
+	private String business;
+	private String job;
+	
 	
 	public String getUserid() {
 		return userid;
@@ -20,24 +24,35 @@ public class UserVo {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-
 	}
-	@Override
-	public String toString() {
-		return "uservo [userid=" + userid + ", pwd=" + pwd + ", name=" + name + ", gender=" + gender + "]";
+	public String getCategory() {
+		return category;
 	}
-	
-	
-
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getBusiness() {
+		return business;
+	}
+	public void setBusiness(String business) {
+		this.business = business;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
+		
 }

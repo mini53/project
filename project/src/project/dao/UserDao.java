@@ -19,7 +19,7 @@ public class UserDao {
 		int num = 0;
 		SqlSession session = factory.openSession();
 		try {
-			num = session.insert("insertUser", vo);
+			num = session.insert("UserRegister", vo);
 		if(num >0) {
 			System.out.println("insert commit");
 		}else {

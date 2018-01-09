@@ -73,7 +73,7 @@ public class controller {
 		return "loginform";
 	}
 
-	@RequestMapping(value ="/login.do", method = RequestMethod.GET)
+/*	@RequestMapping(value ="/login.do", method = RequestMethod.GET)
 	public ModelAndView loginexcute(UserVo vo, HttpSession session) {
 		System.out.println("login.do " + vo.toString());
 		ModelAndView mav = new ModelAndView();
@@ -87,23 +87,29 @@ public class controller {
 			mav.addObject("loginfo", "fail");
 			return mav;
 		}
-	}
+	}*/
 	
-	@RequestMapping(value ="/register.do", method = RequestMethod.GET)
+/*	@RequestMapping(value ="/register.do", method = RequestMethod.GET)
 	public String registerexcute() {
 		System.out.println("register execute");
 		return "userRegister";
-	}
+	}*/
 	
-	@RequestMapping(value ="/userRegister.do", method = RequestMethod.POST)
-	public String userRegister(UserVo vo) {
+	@RequestMapping(value ="/UserRegister.do", method = RequestMethod.POST)
+	public String UserRegister(UserVo vo) {
 		System.out.println("userRegister");
-		int num = userbiz.userInsert(vo);
-		return "loginform";
+		int num = userbiz.UserRegister(vo);
+		if (num != 0) {
+			return "index";
+		}else {
+			return "loginform";
+		}
 	}
 	
-	@RequestMapping(value ="/test.do", method = RequestMethod.GET)
+/*	@RequestMapping(value ="/test.do", method = RequestMethod.GET)
 	public String test() {
 		return "test";
-	}
+	}*/
+	
+	// 로그인 기능
 }

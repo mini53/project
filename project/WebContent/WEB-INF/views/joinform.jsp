@@ -156,23 +156,48 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="아이디" value="">
+								<form id="register-form" action="/UserRegister.do" method="post" role="form" style="display: block;">
+									<div class="form-group"><!-- 회원 정보 등록을 하는 FORM -->
+										<input type="text" name="userid" id="userid" 
+										tabindex="1" class="form-control" placeholder="아이디" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="이메일" value="">
+										<input type="text" name="username" id="username" 
+										tabindex="1" class="form-control" placeholder="별명을 입력해주세요" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
+										<input type="text" name="gender" id="gender" 
+										tabindex="1" class="form-control" placeholder="성별" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="비밀번호 재입력">
+										<input type="password" name="pwd" id="pwd" 
+										tabindex="2" class="form-control" placeholder="비밀번호">
 									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-pwd" id="confirm-pwd" 
+										tabindex="2" class="form-control" placeholder="비밀번호 재입력">
+									</div><!-- 비밀번호 불일치 코드 입력해야함 -->
+									<div class="form-group">
+										<input type="text" name="category" id="category" 
+										tabindex="2" class="form-control" placeholder="관심분야">
+									</div>
+									<div class="form-group">
+										<input type="text" name="business" id="business" 
+										tabindex="2" class="form-control" placeholder="직장">
+									</div>
+									<div class="form-group">
+										<input type="text" name="job" id="job" 
+										tabindex="2" class="form-control" placeholder="업무">
+									</div>
+									<!--  관심분야 / 직장/ 업무 모두 드랍다운 형식으로 바꾸어야 함 -->
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="가입하기">
+												<input type="submit" name="register-submit" id="register-submit" 
+												tabindex="4" class="form-control btn btn-register" value="가입하기">
+									<!-- submit할때 값이 있는지 없는지를 확인 할 수 있는 function이 있어야 하고
+										이를 통해 있으면 다음이 진행되고 없으면 경고창이 뜰 수 있게끔 해야함.
+									 -->			
 											</div>
 										</div>
 									</div>

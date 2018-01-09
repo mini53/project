@@ -17,9 +17,9 @@ mdate	 date,
 cdate	 date );
  -->
 <mapper namespace="user">
-	<insert id="insertUser" parameterType="user">
-		insert into users(userid, pwd, name, gender)
-		values(#{userid}, #{pwd}, #{name}, #{gender})
+	<insert id="UserRegister" parameterType="user">
+		insert into users(userid, pwd, username, gender, category,business, job)
+		values(#{userid}, #{pwd}, #{username}, #{gender}, #{category}, #{business}, #{job})
 	</insert>
 	
 	<select id ="loginCheck" parameterType = "user" resultType = "java.lang.String">

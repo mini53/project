@@ -6,7 +6,7 @@ public class UserDto {
 	private String userid; // 회원 아이디
 	private int status; // 정상 0, 탈회9, 관리자 8
 	private String pwd; // 
-	private String name; // 닉네임
+	private String username; // 닉네임
 	private String category; // 관심분야
 	private String gender; // 성별 
 	private String business; // 업종
@@ -33,10 +33,10 @@ public class UserDto {
 		this.pwd = pwd;
 	}
 	public String getName() {
-		return name;
+		return username;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.username = name;
 	}
 	public String getCategory() {
 		return category;
