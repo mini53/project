@@ -19,7 +19,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.do">BuildUP</a>
+				<a class="navbar-brand" href="index.jsp">Builders</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -92,7 +92,7 @@
 				<div class="col-sm-4"><h4>대표자 소개</h4><p>저는 플레이데이터 수강생 김장훈 입니다. 빅데이터 엔지니어 과정을 수강하고 있습니다. </p></div>
 				<div class="col-sm-2"><h4 style="text-align: center">내비게이션</h4>
 					<div class="list-group">
-						<a href="index.do" class="list-group-item">소개</a>
+						<a href="introduce.do" class="list-group-item">소개</a>
 						<a href="instructor.do" class="list-group-item">운영진</a>
 					</div>
 				</div>
