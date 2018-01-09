@@ -1,9 +1,14 @@
 package project.controller;
 
+<<<<<<< HEAD
 
 import javax.servlet.http.HttpSession;
 
 
+=======
+import javax.servlet.http.HttpSession;
+
+>>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+<<<<<<< HEAD
 import project.dao.userdao;
 import project.biz.userBiz;
+=======
+
+import project.biz.userBiz;
+import project.dao.userdao;
+>>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
 import project.vo.uservo;
 
 @Controller
@@ -73,7 +84,11 @@ public class controller {
 		System.out.println("loginform RequestMapping");
 		return "loginform";
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> f3d2345de26991c34c0f7faec92be748d6c4bdb2
 	@RequestMapping(value ="/login.do", method = RequestMethod.GET)
 	public ModelAndView loginexcute(uservo vo, HttpSession session) {
 		System.out.println("login.do " + vo.toString());
