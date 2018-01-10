@@ -12,19 +12,19 @@
 </head>
 <body>
 	<style type="text/css">
-.panel-login {
+.panel-team {
 	border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 }
-.panel-login>.panel-heading {
+.panel-team>.panel-heading {
 	color: #00415d;
 	background-color: #fff;
 	border-color: #fff;
 	text-align:center;
 }
-.panel-login>.panel-heading a{
+.panel-team>.panel-heading a{
 	text-decoration: none;
 	color: #666;
 	font-weight: bold;
@@ -33,11 +33,11 @@
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
-.panel-login>.panel-heading a.active{
-	color: #59B2E0;
+.panel-team>.panel-heading a.active{
+	color: #029f5b;
 	font-size: 18px;
 }
-.panel-login>.panel-heading hr{
+.panel-team>.panel-heading hr{
 	margin-top: 10px;
 	margin-bottom: 0px;
 	clear: both;
@@ -48,7 +48,7 @@
 	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
 }
-.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+.panel-team input[type="text"],.panel-team input[type="email"],.panel-team input[type="password"] {
 	height: 45px;
 	border: 1px solid #ddd;
 	font-size: 16px;
@@ -56,15 +56,15 @@
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
-.panel-login input:hover,
-.panel-login input:focus {
+.panel-team input:hover,
+.panel-team input:focus {
 	outline:none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
 	border-color: #ccc;
 }
-.btn-login {
+.btn-register {
 	background-color: #59B2E0;
 	outline: none;
 	color: #fff;
@@ -75,20 +75,11 @@
 	text-transform: uppercase;
 	border-color: #59B2E6;
 }
-.btn-login:hover,
-.btn-login:focus {
+.btn-register:hover,
+.btn-register:focus {
 	color: #fff;
 	background-color: #53A3CD;
 	border-color: #53A3CD;
-}
-.forgot-password {
-	text-decoration: underline;
-	color: #888;
-}
-.forgot-password:hover,
-.forgot-password:focus {
-	text-decoration: underline;
-	color: #666;
 }
 
 .btn-register {
@@ -119,7 +110,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.do">Buildus</a>
+				<a class="navbar-brand" href="index.jsp">Buildus</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<c:choose>
@@ -154,11 +145,11 @@
 	<div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
+				<div class="panel panel-team">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-12">
-								<a href="#" class="active" id="login-form-link">로그인</a>
+								<a href="#" class="active" id="register-form-link">스터디 만들기</a>
 							</div>
 						</div>
 						<hr>
@@ -166,33 +157,48 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="/UserLogin.do" method="post" role="form" style="display: block;">
+								<form id="register-form" action="#" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="userid" id="userid" 
-										tabindex="1" class="form-control" placeholder="아이디" value="">
+										<input type="text" name="teamID" id="teamID" tabindex="1" class="form-control" placeholder="팀이름" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="pwd" id="pwd" 
-										tabindex="2" class="form-control" placeholder="비밀번호">
+										<input type="text" name="times" id="times" tabindex="2" class="form-control" placeholder="회차">
 									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> 아이디 기억하기</label>
+									<div class="form-group">
+										<input type="text" name="numbers" id="numbers" tabindex="3" class="form-control" placeholder="총인원수">
+									</div>
+									<div class="form-group">
+    									<label for="goal">목표</label>
+    									<textarea class="form-control" id="goal" rows="2" tabindex="5"></textarea>
+  									</div>
+									<div class="form-group">
+    									<label for="content">상세내용</label>
+    									<textarea class="form-control" id="content" rows="5" tabindex="6"></textarea>
+  									</div>
+									<div class="form-group">
+      									<label for="inputState">요일</label>
+      									<select id="inputState" class="form-control" tabindex="6">
+        									<option selected>주말</option>
+        									<option>평일</option>
+        									<option>주말/평일</option>
+     									 </select>
+    								</div>
+    								<div class="form-group">
+  										<label for="example-date-input" class="col-2 col-form-label">Date</label>
+  										<div class="col-10">
+   											<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+  										</div>
+									</div>
+									<div class="form-group">
+										<label for="example-time-input" class="col-2 col-form-label">Time</label>
+										<div class="col-10">
+    										<input class="form-control" type="time" value="13:45:00" id="example-time-input">
+  										</div>
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" 
-												tabindex="4" class="form-control btn btn-login" value="로그인">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">비밀번호를 잊어버리셨나요?</a>
-												</div>
+												<input type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" value="등록하기">
 											</div>
 										</div>
 									</div>
@@ -228,27 +234,24 @@
 			</div>
 		</div>
 	</footer>
+	<div class="row">
+		<div class="modal" id="modal" tabindex="1">
+			<div class="mdoal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						코딩 부스터의 특징
+						<button class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body" style="text-align: center;">
+						저희 플랫폼은 <br>
+						특히 실시간<br><br>
+						<img src="images/youtube.png" id="imagepreview" style="width: 256px; height: 256px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-    $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-});
-	</script>
->>>>>>> master
 </body>
 </html>

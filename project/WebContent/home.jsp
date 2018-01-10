@@ -27,41 +27,44 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp">Builders</a>
+				<a class="navbar-brand" href="index.jsp">Buildus</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
-					<c:choose>
-						<c:when test="${userid != null}">
+			<c:choose>
+				<c:when test="${userid != null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
+						<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
+						<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
 						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
-						</c:when>
-						<c:when test="${userid == null}">
-							<li><a class="btn btn-default" data-target="#modal" data-toggle="modal">
-							마이페이지<span class="sr-only"></span></a></li>
-							<!--  모달 크기 및 내용 수정 -->
-						</c:when>
-					</c:choose>
-					<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
-					<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
-					<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
-					
-				</ul>
-				
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="loginform.do">로그인</a></li>
-					
-					<li><a href="joinform.do">회원가입</a></li>
-				</ul>
-			</div>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">로그아웃</a></li>
+					</ul>
+				</c:when>
+				<c:when test="${userid == null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
+						<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
+						<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="loginform.do">로그인</a></li>
+						<li><a href="joinform.do">회원가입</a></li>
+					</ul>
+				</c:when>
+			</c:choose>
 		</div>
-	</nav>
+	</div>
+</nav>
 
 	<div class="container">
 		<div class="jumbotron">
-			<h1 class="text-left">Build UP</h1>
+			<h1 class="text-left">Buildus</h1>
 			<p class="text-left">스터디 플랫폼</p>
-			<p class="text-left"><a class="btn btn-primary btn=lg" href="study.do" role="button">팀 만들러 가기</a></p>
+			<p class="text-left"><a class="btn btn-primary btn-lg" href="study.do" role="button">팀 만들러 가기</a></p>
 		</div> 
 		
 		<div class="panel panel-primary">
@@ -153,6 +156,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<footer style="background-color: #000000; color: #ffffff">
 		<div class="container">
 			<br>
