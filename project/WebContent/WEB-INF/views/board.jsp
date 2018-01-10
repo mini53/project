@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +11,14 @@
 	<link rel="stylesheet" href="css/project.css">
 </head>
 <body>
-		<nav class="navbar navbar-default">
+	<style type="text/css">
+		.jumbotron {
+			background-image: url("images/main.png"); 
+			background-size: 100%;
+			color: black;
+		}
+	</style>
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aris-expanded="false">
@@ -19,95 +27,121 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp">Builders</a>
+				<a class="navbar-brand" href="index.do">Buildus</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="introduce.do">ì†Œê°œ<span class="sr-only"></span></a></li>
-					<li><a href="mypage.do">ë§ˆì´íŽ˜ì´ì§€<span class="sr-only"></span></a></li>
-					<li><a href="content.do">ìŠ¤í„°ë”” ë³´ê¸°<span class="sr-only"></span></a></li>
-					<li><a href="board.do">ìžìœ ê²Œì‹œíŒ<span class="sr-only"></span></a></li>
-					<li><a href="contact.do">ë¬¸ì˜í•˜ê¸°<span class="sr-only"></span></a></li>
-
-				</ul>
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-controrl" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•˜ì„¸ìš”.">
-					</div>
-					<button type="submit" class="btn btn-default">ê²€ìƒ‰</button>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="loginform.do">ë¡œê·¸ì¸</a></li>
-					<li><a href="joinform.do">íšŒì›ê°€ìž…</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="row">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">ë²ˆí˜¸</th>
-						<th style="background-color: #eeeeee; text-align: center;">ì œëª©</th>
-						<th style="background-color: #eeeeee; text-align: center;">ìž‘ì„±ìž</th>
-						<th style="background-color: #eeeeee; text-align: center;">ìž‘ì„±ì¼</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td><a href="#">ì•ˆë…•í•˜ì„¸ìš”</a></td>
-						<td>ê¹€ìž¥í›ˆ</td>
-						<td>2018-01-01</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td><a href="#">2ë²ˆê¸€</a></td>
-						<td>ê¹€ì§„í˜¸</td>
-						<td>2018-01-02</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td><a href="#">3ë²ˆê¸€</a></td>
-						<td>ê¹€ì •ë¯¼</td>
-						<td>2018-01-03</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td><a href="#">4ë²ˆê¸€</a></td>
-						<td>ì´ìƒìš±</td>
-						<td>2018-01-05</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="write.do" class="btn btn-primary pull-right">ê¸€ì“°ê¸°</a>
+			<c:choose>
+				<c:when test="${userid != null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">¼Ò°³<span class="sr-only"></span></a></li>
+						<li><a href="content.do">½ºÅÍµð º¸±â<span class="sr-only"></span></a></li>
+						<li><a href="board.do">ÀÚÀ¯°Ô½ÃÆÇ<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">¹®ÀÇÇÏ±â<span class="sr-only"></span></a></li>
+						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">·Î±×¾Æ¿ô</a></li>
+					</ul>
+				</c:when>
+				<c:when test="${userid == null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">¼Ò°³<span class="sr-only"></span></a></li>
+						<li><a href="content.do">½ºÅÍµð º¸±â<span class="sr-only"></span></a></li>
+						<li><a href="board.do">ÀÚÀ¯°Ô½ÃÆÇ<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">¹®ÀÇÇÏ±â<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="loginform.do">·Î±×ÀÎ</a></li>
+						<li><a href="joinform.do">È¸¿ø°¡ÀÔ</a></li>
+					</ul>
+				</c:when>
+			</c:choose>
 		</div>
 	</div>
+</nav>
+	<div class="container">
+      <div class="row">
+         <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+            <thead>
+               <tr>
+                  <th style="background-color: #eeeeee; text-align: center;">¹øÈ£</th>
+                  <th style="background-color: #eeeeee; text-align: center;">Á¦¸ñ</th>
+                  <th style="background-color: #eeeeee; text-align: center;">ÀÛ¼ºÀÚ</th>
+                  <th style="background-color: #eeeeee; text-align: center;">ÀÛ¼ºÀÏ</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>1</td>
+                  <td><a href="#">¾È³çÇÏ¼¼¿ä</a></td>
+                  <td>±èÀåÈÆ</td>
+                  <td>2018-01-01</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td><a href="#">2¹ø±Û</a></td>
+                  <td>±èÁøÈ£</td>
+                  <td>2018-01-02</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td><a href="#">3¹ø±Û</a></td>
+                  <td>±èÁ¤¹Î</td>
+                  <td>2018-01-03</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td><a href="#">4¹ø±Û</a></td>
+                  <td>ÀÌ»ó¿í</td>
+                  <td>2018-01-05</td>
+               </tr>
+            </tbody>
+         </table>
+         <a href="write.do" class="btn btn-primary pull-right">±Û¾²±â</a>
+      </div>
+	</div>
+
 	<footer style="background-color: #000000; color: #ffffff">
 		<div class="container">
 			<br>
 			<div class="row">
-				<div class="col-sm-2" style="text-align:  center;"><h5>Copyright &copy; 2018</h5><h5>ê¹€ìž¥í›ˆ</h5></div>
-				<div class="col-sm-4"><h4>ëŒ€í‘œìž ì†Œê°œ</h4><p>ì €ëŠ” í”Œë ˆì´ë°ì´í„° ìˆ˜ê°•ìƒ ê¹€ìž¥í›ˆ ìž…ë‹ˆë‹¤. ë¹…ë°ì´í„° ì—”ì§€ë‹ˆì–´ ê³¼ì •ì„ ìˆ˜ê°•í•˜ê³  ìžˆìŠµë‹ˆë‹¤. </p></div>
-				<div class="col-sm-2"><h4 style="text-align: center">ë‚´ë¹„ê²Œì´ì…˜</h4>
+				<div class="col-sm-2" style="text-align:  center;"><h5>Copyright &copy; 2018</h5><h5>±èÀåÈÆ</h5></div>
+				<div class="col-sm-4"><h4>´ëÇ¥ÀÚ ¼Ò°³</h4><p>Àú´Â ÇÃ·¹ÀÌµ¥ÀÌÅÍ ¼ö°­»ý ±èÀåÈÆ ÀÔ´Ï´Ù. ºòµ¥ÀÌÅÍ ¿£Áö´Ï¾î °úÁ¤À» ¼ö°­ÇÏ°í ÀÖ½À´Ï´Ù. </p></div>
+				<div class="col-sm-2"><h4 style="text-align: center">³»ºñ°ÔÀÌ¼Ç</h4>
 					<div class="list-group">
-						<a href="introduce.do" class="list-group-item">ì†Œê°œ</a>
-						<a href="instructor.do" class="list-group-item">ìš´ì˜ì§„</a>
+						<a href="index.do" class="list-group-item">¼Ò°³</a>
+						<a href="instructor.do" class="list-group-item">¿î¿µÁø</a>
 					</div>
 				</div>
 				<div class="col-sm-2"><h4 style="text-align: center">SNS</h4>
 					<div class="list-group">
-						<a href="#" class="list-group-item">íŽ˜ì´ìŠ¤ë¶</a>
-						<a href="#" class="list-group-item">ìœ íŠœë¸Œ</a>
-						<a href="#" class="list-group-item">ë„¤ì´ë²„</a>
+						<a href="#" class="list-group-item">ÆäÀÌ½ººÏ</a>
+						<a href="#" class="list-group-item">À¯Æ©ºê</a>
+						<a href="#" class="list-group-item">³×ÀÌ¹ö</a>
 					</div>
 				</div>
-				<div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp; by ê¹€ì§„í˜¸</h4>
+				<div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp; by ±èÁøÈ£</h4>
 				</div>
 			</div>
 		</div>
 	</footer>
+	<div class="row">
+		<div class="modal" id="modal" tabindex="1">
+			<div class="mdoal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						ÄÚµù ºÎ½ºÅÍÀÇ Æ¯Â¡
+						<button class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body" style="text-align: center;">
+						ÀúÈñ ÇÃ·§ÆûÀº <br>
+						Æ¯È÷ ½Ç½Ã°£<br><br>
+						<img src="images/youtube.png" id="imagepreview" style="width: 256px; height: 256px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>

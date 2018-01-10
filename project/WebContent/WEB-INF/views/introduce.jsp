@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,29 +27,38 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp">Builders</a>
+				<a class="navbar-brand" href="index.do">Buildus</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
-					<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
-					<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
-					<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
-					<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
-				</ul>
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-controrl" placeholder="내용을 입력하세요.">
-					</div>
-					<button type="submit" class="btn btn-default">검색</button>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="loginform.do">로그인</a></li>
-					<li><a href="joinform.do">회원가입</a></li>
-				</ul>
-			</div>
+			<c:choose>
+				<c:when test="${userid != null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
+						<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
+						<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
+						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">로그아웃</a></li>
+					</ul>
+				</c:when>
+				<c:when test="${userid == null}">
+					<ul class="nav navbar-nav">
+						<li><a href="introduce.do">소개<span class="sr-only"></span></a></li>
+						<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
+						<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
+						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="loginform.do">로그인</a></li>
+						<li><a href="joinform.do">회원가입</a></li>
+					</ul>
+				</c:when>
+			</c:choose>
 		</div>
-	</nav>
+	</div>
+</nav>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
