@@ -1,18 +1,65 @@
+use mysql;
 drop table users;
 create table users(
-userid   varchar2(30) primary key,    
-status   number(1)   default 0,
-pwd	     varchar2(16),
-username varchar2(20) unique,
-category varchar2(6) ,
+userid   varchar(30) primary key,    
+status   int(1)   default 0,
+pwd	     varchar(16),
+username varchar(20) unique,
+category varchar(6) ,
 gender	 char(1)   check ( gender in ('M','F') ),
-business varchar2(6) ,
-job	     varchar2(6) ,
-edate	 date default sysdate,
-mdate	 date,
-cdate	 date
+business varchar(6) ,
+job	     varchar(6) ,
+edate	 DATETIME default CURRENT_TIMESTAMP,
+mdate	 DATETIME current_timestamp default on update current_timestamp,
+cdate	 DATETIME current_timestamp default on update current_timestamp
 );
 select * from users;
+
+
+drop table board;
+create table board(
+seq   	int primary key AUTO_INCREMENT,
+status	tinyint,
+userid	varchar(30),
+subject	varchar(100),
+content	blob,
+hit	    int,
+logtime	DATETIME default CURRENT_TIMESTAMP,
+btype	tinyint,
+username varchar(20)
+);
+
+drop table memo;
+create table memo(
+mseq	 int primary key AUTO_INCREMENT,
+seq	     int,
+mcontent varchar(500)
+);
+
+
+drop table board_list;
+create table board_list(
+bcode	smallint,
+bname	varchar(100),
+btype	tinyint,
+ccode	tinyint
+);
+
+CREATE  INDEX idx_board_list_btype ON board_list (btype);
+CREATE  INDEX idx_board_list_ccode ON category (ccode);
+alter table board_list add constraint fk_board_list_btype foreign key(btype) references  board_type (btype);
+
+
+create table category(
+ccode   tinyint,
+cname	varchar(100)
+);
+
+
+create table board_ype(
+btype	tinyint,
+btype_name	varchar(100)
+);
 
 drop table team;
 create table team( 
@@ -160,3 +207,7 @@ alter table board drop constraint fk_board_userid foreign key(userid) references
 
 create sequence team_seq;
 create sequence board_seq;
+
+
+alter table board_list add constraint fk_board_list_btype foreign key(btype) references  board_type (btype);
+alter table board drop constraint fk_board_userid foreign key(userid) references  users (userid)

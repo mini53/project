@@ -1,3 +1,55 @@
+drop table board;
+create table board(
+seq   	number primary key ,
+status	number,
+userid	varchar2(30),
+subject	varchar2(100),
+content	clob,
+hit	    number,
+logtime	date default sysdate,
+btype	number,
+username varchar2(20)
+);
+
+drop table memo;
+create table memo(
+mseq	 number primary key ,
+seq	     number,
+mcontent varchar2(500)
+);
+
+
+drop table board_list;
+create table board_list(
+bcode	number,
+bname	varchar2(100),
+btype	number,
+ccode	number
+);
+
+
+
+create table category(
+ccode   number,
+cname	varchar2(100)
+);
+
+
+create table board_ype(
+btype	number,
+btype_name	varchar2(100)
+);
+
+
+create sequence mseq;
+create sequence seq;
+
+=====================================
+CREATE  INDEX idx_board_list_btype ON board_list (btype);
+CREATE  INDEX idx_board_list_ccode ON category (ccode);
+alter table board_list add constraint fk_board_list_btype foreign key(btype) references  board_type (btype);
+
+
 drop table users;
 create table users(
 userid   varchar2(30) primary key,    
