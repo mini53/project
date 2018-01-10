@@ -18,7 +18,12 @@ import project.vo.UserVo;
 public class controller {
 	@Autowired
 	private UserBiz userbiz;
-
+	
+	@RequestMapping(value = "/index.do")
+	public String index() {
+		return "index";
+	}
+	
 	@RequestMapping(value="/introduce.do", method = RequestMethod.GET)
 	public String introduce() {
 		System.out.println("introduce RequestMapping");
@@ -98,6 +103,7 @@ public class controller {
 	@RequestMapping(value ="/UserRegister.do", method = RequestMethod.POST)
 	public String UserRegister(UserVo vo) {
 		System.out.println("userRegister");
+		System.out.println(vo.getCategory());
 		int num = userbiz.UserRegister(vo);
 		if (num != 0) {
 			return "index";
