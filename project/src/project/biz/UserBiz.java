@@ -43,5 +43,16 @@ public class UserBiz {
 		}
 		return str;
 	}
+
+	public String UserNameCheck(String username) {
+		String res = null;
+		String response = userdao.UserNameCheck(username);
+		if(response != null) {
+			res = "success";
+		}else {
+			res = "fail";
+		}
+		return res;
+	}
 	
 }

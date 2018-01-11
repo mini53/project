@@ -28,6 +28,10 @@ cdate	 date );
 					pwd = #{pwd} 
 	</select>
 	
+	<select id = "UserNameCheck" parameterType = "user" resultType = "java.lang.String">
+		select username from users where username = #{username}
+	</select>
+	
 	<!-- 
 	
 	<select id="selectCus" resultType="customer">

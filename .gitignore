@@ -155,3 +155,5 @@ Servers/Tomcat v8.5 Server at localhost-config/web.xml
 .css
 .fonts
 .js
+project/WebContent/test.jsp
+project/WebContent/test_index.jsp

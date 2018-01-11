@@ -129,4 +129,18 @@ public class controller {
 			return mv;
 		}
 	}
+	@RequestMapping(value = "/UserLogout.do")
+	public String UserLogout(HttpSession session) {
+		session.invalidate(); // 세션을 초기화 하고 넘긴다.
+		return "index";
+	}
+	
+	@RequestMapping(value = "/test.do")
+	public ModelAndView test(@RequestParam("username") String username) {
+		System.out.println("여기 옴 " + username);
+		String res = userbiz.UserNameCheck(username);
+		System.out.println(res);
+		ModelAndView mv = new ModelAndView("joinform", "res", res);
+		return mv;
+	}
 }

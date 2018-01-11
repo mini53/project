@@ -69,4 +69,20 @@ public class UserDao {
 		return str;
 	}
 
+	public String UserNameCheck(String username) {
+		String response = null;
+		UserVo uv = new UserVo();
+		uv.setUsername(username);
+		try {
+			response = driver().selectOne("UserNameCheck", uv);
+			System.out.println("check");
+		}catch(Exception e) {
+			e.getStackTrace();
+			System.out.println(e.getMessage());
+		}finally {
+			driver().close();
+		}
+		return response;
+	}
+
 }

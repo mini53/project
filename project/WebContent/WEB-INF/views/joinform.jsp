@@ -186,11 +186,12 @@
 									</div>
 									<div class = "row"><!-- 한 줄에 있으므로 row로 다시 묶음 -->
 										<div class="form-group col-md-9">
-											<input type="text" name="username" id="username" tabindex="1"
+											<input type="text" name="username" id="username" tabindex="2"
 											class="form-control" placeholder="별명을 입력해주세요" value="">
 										</div>
 										<div class="form-group col-md-3">
-											<input type = "button" value = "중복확인" onclick="">
+											<input type = "button" id = "NameCheck" value = "중복확인" 
+											tabindex="3">
 											<!-- button 액션 기능 추가 -->
 										</div>
 									</div>
@@ -201,7 +202,7 @@
 										</select>
 									</div>
 									<div class="form-group">
-										<input type="password" name="pwd" id="pwd" tabindex="2"
+										<input type="password" name="pwd" id="pwd" tabindex="4"
 											class="form-control" placeholder="비밀번호">
 									</div>
 									<div class="form-group">
@@ -214,8 +215,9 @@
 											<option value="u001">자기 개발</option>
 											<option value="u002">업무 향상</option>
 											<option value="u003">이직 목적</option>
-										</select>
+										</select>							
 									</div>
+									<!-- 이 부분도 select로 바꿔야함 직장, 업무 코드화 할것.-->
 									<div class="form-group">
 										<input type="text" name="business" id="business" tabindex="2"
 											class="form-control" placeholder="직장">
@@ -284,7 +286,6 @@
 	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(function() {
-
 			$('#login-form-link').click(function(e) {
 				$("#login-form").delay(100).fadeIn(100);
 				$("#register-form").fadeOut(100);
@@ -299,13 +300,33 @@
 				$(this).addClass('active');
 				e.preventDefault();
 			});
+			// 중복확인을 하는 ajax
+			$('#NameCheck').click(function(){
+					var username = $('#username').val();
+					alert(username)
+            	if (username == "") {
+                	alert("입력된 값이 없습니다.")
+            		}
+            	else {
+            		$.ajax({
+						type :'post',
+						url : '/test.do',
+						data : {"username" : username}, 
+						success:function(data){
+							alert(data.res)
+							if(data != null){
+								alert("중복되었습니다.")
+							}	
+							else{
+								alert('등록된 닉네임이 없습니다')
+							}
+						}
+					})
+					// ajax
+				} // outter else
+			})
 		});
-/* 		
-		  $('.categorySelect').selectpicker({  
-		       	width: '220px'
-		        height:'34px'
-		        margin-bottom: '10px'
-		    }); */
+
 	</script>
 </body>
 </html>
