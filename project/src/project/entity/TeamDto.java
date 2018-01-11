@@ -6,9 +6,9 @@ import java.util.Date;
 // 팀이 생성 되더라도 제대로 만들어 지는 경우 또는 엎어지는 경우가 있음
 public class TeamDto {
 	private int id; // 팀생성시 만들어지는 고유id 값
-	private String tname; // 팀의 고유 이름, 유니크!
+	private String name; // 팀의 고유 이름, 유니크!
 	private int status; // 팀의상태, 모집마감 =0, 모집중1 , 실패3, 강제종료:5, 정상종료7, 취소(삭제) 9
-	private String tcategory; // 팀의 분야 : 우리가 설정해줘야하는데 힘들듯? 
+	private String category; // 팀의 분야 : 우리가 설정해줘야하는데 힘들듯? 
 	private String theme; // 팀의 주제 : 예)JSP 집중 공부
 	private String goal; // 팀의 목표, 모집중일때 뜨는 것, 예)JSP 강의 1회독, 실습 1회
 	private String content; // 팀 설명
@@ -27,23 +27,23 @@ public class TeamDto {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTname() {
-		return tname;
+	public String getName() {
+		return name;
 	}
-	public void setTname(String tname) {
-		this.tname = tname;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getStatus() {
 		return status;
 	}
 	public void setStatus(int status) {
-		status = status;
+		this.status = status;
 	}
-	public String getTcategory() {
-		return tcategory;
+	public String getCategory() {
+		return category;
 	}
-	public void setTcategory(String tcategory) {
-		this.tcategory = tcategory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getTheme() {
 		return theme;
