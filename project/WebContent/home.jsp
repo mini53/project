@@ -64,7 +64,7 @@
 		<div class="jumbotron">
 			<h1 class="text-left">Buildus</h1>
 			<p class="text-left">½ºÅÍµð ÇÃ·§Æû</p>
-			<p class="text-left"><a class="btn btn-primary btn-lg" href="study.do" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>
+			<p class="text-left"><a class="btn btn-primary btn-lg" href="teammakeform.do" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>
 		</div> 
 		
 		<div class="panel panel-primary">

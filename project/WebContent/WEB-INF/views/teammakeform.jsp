@@ -157,9 +157,9 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register-form" action="#" method="post" role="form" style="display: block;">
+								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="teamID" id="teamID" tabindex="1" class="form-control" placeholder="팀이름" value="">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="팀이름" value="">
 									</div>
 									<div class="form-group">
 										<input type="text" name="times" id="times" tabindex="2" class="form-control" placeholder="회차">
@@ -168,33 +168,53 @@
 										<input type="text" name="numbers" id="numbers" tabindex="3" class="form-control" placeholder="총인원수">
 									</div>
 									<div class="form-group">
-    									<label for="goal">목표</label>
-    									<textarea class="form-control" id="goal" rows="2" tabindex="5"></textarea>
-  									</div>
-									<div class="form-group">
-    									<label for="content">상세내용</label>
-    									<textarea class="form-control" id="content" rows="5" tabindex="6"></textarea>
-  									</div>
-									<div class="form-group">
-      									<label for="inputState">요일</label>
-      									<select id="inputState" class="form-control" tabindex="6">
-        									<option selected>주말</option>
-        									<option>평일</option>
-        									<option>주말/평일</option>
+      									<label for="category">카테고리</label>
+      									<select id="category" class="form-control" tabindex="4">
+        									<option selected>1</option>
+        									<option>2</option>
+        									<option>3</option>
      									 </select>
     								</div>
     								<div class="form-group">
-  										<label for="example-date-input" class="col-2 col-form-label">Date</label>
-  										<div class="col-10">
-   											<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-  										</div>
+    									<label for="theme">주제</label>
+    									<textarea class="form-control" id="theme" rows="1" tabindex="5"></textarea>
+  									</div>
+									<div class="form-group">
+    									<label for="goal">목표</label>
+    									<textarea class="form-control" id="goal" rows="2" tabindex="6"></textarea>
+  									</div>
+									<div class="form-group">
+    									<label for="content">상세내용</label>
+    									<textarea class="form-control" id="content" rows="5" tabindex="7"></textarea>
+  									</div>
+									
+    								<div class="row">
+    									<div class="col-md-6">
+    										<div class="form-group">
+  												<label for="sdate" class="col-2 col-form-label">스터디 시작 예정일</label>
+  												<div class="col-10">
+   													<input class="form-control" type="date" value="2018-01-01" id="sdate">
+  												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+    										<div class="form-group">
+      											<label for="weekend">요일</label>
+      											<select id="weekend" class="form-control" tabindex="8">
+        											<option selected>주말</option>
+        											<option>평일</option>
+        											<option>주말/평일</option>
+     									 		</select>
+    										</div>
+										</div>
 									</div>
 									<div class="form-group">
-										<label for="example-time-input" class="col-2 col-form-label">Time</label>
-										<div class="col-10">
-    										<input class="form-control" type="time" value="13:45:00" id="example-time-input">
+  										<label for="ddate" class="col-2 col-form-label">모집 마감일</label>
+  										<div class="col-10">
+   											<input class="form-control" type="date" value="2018-12-31" id="ddate">
   										</div>
 									</div>
+									
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
@@ -218,8 +238,8 @@
 				<div class="col-sm-4"><h4>대표자 소개</h4><p>저는 플레이데이터 수강생 김장훈 입니다. 빅데이터 엔지니어 과정을 수강하고 있습니다. </p></div>
 				<div class="col-sm-2"><h4 style="text-align: center">내비게이션</h4>
 					<div class="list-group">
-						<a href="index.do" class="list-group-item">소개</a>
-						<a href="instructor.do" class="list-group-item">운영진</a>
+						<a href="index.html" class="list-group-item">소개</a>
+						<a href="instructor.html" class="list-group-item">운영진</a>
 					</div>
 				</div>
 				<div class="col-sm-2"><h4 style="text-align: center">SNS</h4>
@@ -234,24 +254,26 @@
 			</div>
 		</div>
 	</footer>
-	<div class="row">
-		<div class="modal" id="modal" tabindex="1">
-			<div class="mdoal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						코딩 부스터의 특징
-						<button class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body" style="text-align: center;">
-						저희 플랫폼은 <br>
-						특히 실시간<br><br>
-						<img src="images/youtube.png" id="imagepreview" style="width: 256px; height: 256px;">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+});
+	</script>
 </body>
 </html>

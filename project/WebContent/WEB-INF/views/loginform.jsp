@@ -249,6 +249,5 @@
 	});
 });
 	</script>
->>>>>>> master
 </body>
 </html>

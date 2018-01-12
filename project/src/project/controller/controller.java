@@ -143,4 +143,10 @@ public class controller {
 		ModelAndView mv = new ModelAndView("joinform", "res", res);
 		return mv;
 	}
+	
+	@RequestMapping(value="/teammakeform.do", method = RequestMethod.GET)
+	public String teammakeform() {
+		System.out.println("teammakeform RequestMapping");
+		return "teammakeform";
+	}
 }
