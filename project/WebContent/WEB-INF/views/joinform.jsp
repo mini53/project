@@ -130,7 +130,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.do">Buildus</a>
+				<a class="navbar-brand" href="index.do">Build US</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<c:choose>
@@ -310,10 +310,10 @@
             	else {
             		$.ajax({
 						type :'post',
-						url : '/test.do',
+						url : '/UserNameCheck.do',
 						data : {"username" : username}, 
 						success:function(data){
-							alert(data.res)
+							alert("성공 확인용")
 							if(data != null){
 								alert("중복되었습니다.")
 							}	

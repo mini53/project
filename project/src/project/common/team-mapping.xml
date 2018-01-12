@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="team">
+	<insert id="TeamRegister" parameterType="team">
+	insert into team
+	(teamname, category, theme, goal, content, sdate, times,weekend, ddate, numbers, userid) 
+values(#{teamname}, #{category}, #{theme}, #{goal}, #{content}, #{sdate}, #{times}
+	, #{weekend}, #{ddate}, #{numbers}, #{userid})
+	</insert>
+		<insert id="TeamRegisterTem" parameterType="team">
+	insert into team
+	(teamname, category, theme, goal, content,times,weekend, numbers, userid) 
+values(#{teamname}, #{category}, #{theme}, #{goal}, #{content}, #{times}
+	, #{weekend}, #{numbers}, #{userid})
+	</insert>
+	
+<!-- 	<select id ="UserLogin" parameterType = "user" resultType = "java.lang.String">
+		select userid from users 
+			where userid = #{userid} and
+					pwd = #{pwd} 
+	</select>
+	
+	<select id = "UserNameCheck" parameterType = "user" resultType = "java.lang.String">
+		select username from users where username = #{username}
+	</select> -->
+	
+</mapper>

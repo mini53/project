@@ -41,7 +41,7 @@
 						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="UserLogout.do">로그아웃</a></li>
 					</ul>
 				</c:when>
 				<c:when test="${userid == null}">
@@ -50,6 +50,10 @@
 						<li><a href="content.do">스터디 보기<span class="sr-only"></span></a></li>
 						<li><a href="board.do">자유게시판<span class="sr-only"></span></a></li>
 						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="loginform.do">로그인</a></li>
+						<li><a href="joinform.do">회원가입</a></li>
 					</ul>
 				</c:when>
 			</c:choose>
@@ -72,7 +76,11 @@
 			<h1 class="text-left">Build UP</h1>
 			<p class="text-left">스터디 플랫폼</p>
 			<p class="text-left">
+<<<<<<< HEAD
 				<a class="btn btn-primary btn=lg" href="teammakeform.do" role="button">팀
+=======
+				<a class="btn btn-primary btn=lg" href="TeamMakeForm.do" role="button">팀
+>>>>>>> master
 					만들러 가기</a>
 			</p>
 		</div>
