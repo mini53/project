@@ -110,7 +110,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp">Buildus</a>
+				<a class="navbar-brand" href="index.do">Buildus</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<c:choose>
@@ -123,7 +123,7 @@
 						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="UserLogout.do">로그아웃</a></li>
 					</ul>
 				</c:when>
 				<c:when test="${userid == null}">
@@ -157,48 +157,61 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register-form" action="#" method="post" role="form" style="display: block;">
+								<form id="register-form" action="/TeamRegister.do" method="post" role="form" style="display: block;">	
 									<div class="form-group">
-										<input type="text" name="teamID" id="teamID" tabindex="1" class="form-control" placeholder="팀이름" value="">
+										<input type="text" name="teamname" id="teamname" tabindex="1" 
+										class="form-control" placeholder="팀이름" value="">
 									</div>
 									<div class="form-group">
-										<input type="text" name="times" id="times" tabindex="2" class="form-control" placeholder="회차">
+										<input type="text" name="times" id="times" tabindex="2" 
+										class="form-control" placeholder="회차">
 									</div>
 									<div class="form-group">
-										<input type="text" name="numbers" id="numbers" tabindex="3" class="form-control" placeholder="총인원수">
+										<input type="text" name="numbers" id="numbers" tabindex="3" 
+										class="form-control" placeholder="총인원수">
 									</div>
+									<div class="form-group">
+    									<label for="theme">주제</label>
+    									<textarea class="form-control" id="theme" name = "theme" rows="2" tabindex="5"></textarea>
+  									</div>
 									<div class="form-group">
     									<label for="goal">목표</label>
-    									<textarea class="form-control" id="goal" rows="2" tabindex="5"></textarea>
+    									<textarea class="form-control" id="goal" name = "goal" rows="2" tabindex="5"></textarea>
   									</div>
 									<div class="form-group">
     									<label for="content">상세내용</label>
-    									<textarea class="form-control" id="content" rows="5" tabindex="6"></textarea>
+    									<textarea class="form-control" id="content" name = "content" rows="5" tabindex="6"></textarea>
   									</div>
 									<div class="form-group">
-      									<label for="inputState">요일</label>
-      									<select id="inputState" class="form-control" tabindex="6">
-        									<option selected>주말</option>
-        									<option>평일</option>
-        									<option>주말/평일</option>
+      									<label for="inputState">활동요일(예정)</label>
+      									<select id="weekend" name = "weekend" class="form-control" tabindex="6">
+        									<option selected value="0">주말</option>
+        									<option value="1">평일</option>
+        									<option value="2">주말/평일</option>
      									 </select>
     								</div>
     								<div class="form-group">
-  										<label for="example-date-input" class="col-2 col-form-label">Date</label>
+  										<label for="example-sdate-input" class="col-2 col-form-label">시작예정일</label>
   										<div class="col-10">
-   											<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+   											<input class="form-control" type="date" name = "sdate" id="example-sdate-input">
   										</div>
 									</div>
 									<div class="form-group">
-										<label for="example-time-input" class="col-2 col-form-label">Time</label>
-										<div class="col-10">
-    										<input class="form-control" type="time" value="13:45:00" id="example-time-input">
+  										<label for="example-ddate-input" class="col-2 col-form-label">마감 종료일</label>
+  										<div class="col-10">
+   											<input class="form-control" type="date" name = "ddate" id="example-ddate-input">
   										</div>
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" value="등록하기">
+												<c:if test="${Check == 'no'}">
+													<h3> 팀 실패</h3>
+												</c:if>
+												<c:if test="${Check == 'ok'}">
+													<h3> 팀 성공</h3>
+												</c:if>
 											</div>
 										</div>
 									</div>

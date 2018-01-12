@@ -4,12 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <!--  classpath를 인식하는 애들은 src 아래에 둬야함 -->
+
 <configuration>
 	<typeAliases>
 		<typeAlias alias = "user" type = "project.vo.UserVo"/>
+		<typeAlias alias = "team" type = "project.vo.TeamVo"/>
 	</typeAliases>
 
 <mappers>
 	<mapper resource = "/project/common/user-mapping.xml"/>
+	<mapper resource = "/project/common/team-mapping.xml"/>
 </mappers>
 </configuration>
