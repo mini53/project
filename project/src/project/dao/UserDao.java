@@ -75,7 +75,7 @@ public class UserDao {
 		uv.setUsername(username);
 		try {
 			response = driver().selectOne("UserNameCheck", uv);
-			System.out.println("check");
+			System.out.println("dao check");
 		}catch(Exception e) {
 			e.getStackTrace();
 			System.out.println(e.getMessage());

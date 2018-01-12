@@ -47,6 +47,7 @@ public class UserBiz {
 	public String UserNameCheck(String username) {
 		String res = null;
 		String response = userdao.UserNameCheck(username);
+		System.out.println("닉네임은 " + response);
 		if(response != null) {
 			res = "success";
 		}else {

@@ -72,7 +72,7 @@
 			<h1 class="text-left">Build UP</h1>
 			<p class="text-left">½ºÅÍµð ÇÃ·§Æû</p>
 			<p class="text-left">
-				<a class="btn btn-primary btn=lg" href="study.do" role="button">ÆÀ
+				<a class="btn btn-primary btn=lg" href="TeamMakeForm.do" role="button">ÆÀ
 					¸¸µé·¯ °¡±â</a>
 			</p>
 		</div>

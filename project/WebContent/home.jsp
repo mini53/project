@@ -64,7 +64,14 @@
 		<div class="jumbotron">
 			<h1 class="text-left">Buildus</h1>
 			<p class="text-left">½ºÅÍµð ÇÃ·§Æû</p>
-			<p class="text-left"><a class="btn btn-primary btn-lg" href="study.do" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>
+			<c:choose>
+				<c:when test="${userid != null}">
+				<p class="text-left"><a class="btn btn-primary btn-lg" href="TeamMakeForm.do" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>	
+				</c:when>
+				<c:when test="${userid == null}">
+				<p class="text-left"><a class="btn btn-primary btn-lg" href="#" role="button">ÆÀ ¸¸µé·¯ °¡±â</a></p>
+				</c:when>
+			</c:choose>
 		</div> 
 		
 		<div class="panel panel-primary">
