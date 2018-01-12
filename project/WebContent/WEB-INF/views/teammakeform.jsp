@@ -123,6 +123,8 @@
                   <li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
+               		<li><h2> ${userid}님 환영 합니다</h2>
+               		<li><a href="#">MyPage</a></li>
                   <li><a href="UserLogout.do">로그아웃</a></li>
                </ul>
             </c:when>
@@ -212,6 +214,7 @@
                                     <c:if test="${Check == 'ok'}">
                                        <h3> 팀 성공</h3>
                                     </c:if>
+                                    <!--  이부분 alert로 바꿔야함 -->
                                  </div>
                               </div>
                            </div>

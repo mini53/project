@@ -223,7 +223,7 @@
 											class="form-control" placeholder="직장">
 									</div>
 									<div class="form-group">
-										<input type="text" name="job" id="job" tabindex="2"
+										<input type="text" name="job" id="dept" tabindex="2"
 											class="form-control" placeholder="업무">
 									</div>
 									<!--  관심분야 / 직장/ 업무 모두 드랍다운 형식으로 바꾸어야 함 -->

@@ -5,8 +5,8 @@
 
 <mapper namespace="user">
 	<insert id="UserRegister" parameterType="user">
-		insert into users(userid, pwd, username, gender, category,business, job)
-		values(#{userid}, #{pwd}, #{username}, #{gender}, #{category}, #{business}, #{job})
+		insert into users(userid, pwd, username, gender, category,business, dept)
+		values(#{userid}, #{pwd}, #{username}, #{gender}, #{category}, #{business}, #{dept})
 	</insert>
 	
 	<select id ="UserLogin" parameterType = "user" resultType = "java.lang.String">

@@ -69,4 +69,5 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("joinform", "res", res);
 		return mv;
 	}
+	
 }

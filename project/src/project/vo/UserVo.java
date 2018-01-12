@@ -9,7 +9,7 @@ public class UserVo {
 	private String gender;
 	private String category;
 	private String business;
-	private String job;
+	private String dept;
 	
 	
 	public String getUserid() {
@@ -49,10 +49,10 @@ public class UserVo {
 		this.business = business;
 	}
 	public String getJob() {
-		return job;
+		return dept;
 	}
 	public void setJob(String job) {
-		this.job = job;
+		this.dept = job;
 	}
 		
 }

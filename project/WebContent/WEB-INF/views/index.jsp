@@ -40,9 +40,11 @@
 						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
 						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					   <ul class="nav navbar-nav navbar-right">
+						<li><a style="font-style: italic; color: aqua;">${userid} 님 환영 합니다</a></li>
+						<li><a href ="mypage.do">마이페이지로</a>
 						<li><a href="UserLogout.do">로그아웃</a></li>
-					</ul>
+			</ul>
 				</c:when>
 				<c:when test="${userid == null}">
 					<ul class="nav navbar-nav">
@@ -76,12 +78,7 @@
 			<h1 class="text-left">Build UP</h1>
 			<p class="text-left">스터디 플랫폼</p>
 			<p class="text-left">
-<<<<<<< HEAD
-				<a class="btn btn-primary btn=lg" href="teammakeform.do" role="button">팀
-=======
-				<a class="btn btn-primary btn=lg" href="TeamMakeForm.do" role="button">팀
->>>>>>> master
-					만들러 가기</a>
+				<a class="btn btn-primary btn=lg" href="TeamMakeForm.do" role="button">팀 만들러 가기</a>
 			</p>
 		</div>
 

@@ -41,9 +41,11 @@
 						<li><a href="contact.do">문의하기<span class="sr-only"></span></a></li>
 						<li><a href="mypage.do">마이페이지<span class="sr-only"></span></a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">로그아웃</a></li>
-					</ul>
+					   <ul class="nav navbar-nav navbar-right">
+						<li><a style="font-style: italic; color: aqua;">${userid} 님 환영 합니다</a></li>
+						<li><a href ="mypage.do">마이페이지로</a>
+						<li><a href="UserLogout.do">로그아웃</a></li>
+			</ul>
 				</c:when>
 				<c:when test="${userid == null}">
 					<ul class="nav navbar-nav">
