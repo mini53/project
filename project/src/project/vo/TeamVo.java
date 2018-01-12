@@ -12,17 +12,12 @@ public class TeamVo {
 	private String theme;
 	private String goal;
 	private String content;
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date sdate;
-	
+	private String sdate;
 	private int times;
 	private int weekend;
-	private Date ddate;
-	
+	private String ddate;
 	private int numbers;
 	private String userid;
-	
 	public String getTeamname() {
 		return teamname;
 	}
@@ -53,35 +48,35 @@ public class TeamVo {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getSdate() {
+	public String getSdate() {
 		return sdate;
 	}
-	public void setSdate(Date sdate) {
+	public void setSdate(String sdate) {
 		this.sdate = sdate;
 	}
 	public int getTimes() {
 		return times;
 	}
-	public void setTimes(String times) {
-		this.times = Integer.parseInt(times);
+	public void setTimes(int times) {
+		this.times = times;
 	}
 	public int getWeekend() {
 		return weekend;
 	}
-	public void setWeekend(String weekend) {
-		this.weekend = Integer.parseInt(weekend);
+	public void setWeekend(int weekend) {
+		this.weekend = weekend;
 	}
-	public Date getDdate() {
+	public String getDdate() {
 		return ddate;
 	}
-	public void setDdate(Date ddate) {
+	public void setDdate(String ddate) {
 		this.ddate = ddate;
 	}
 	public int getNumbers() {
 		return numbers;
 	}
-	public void setNumbers(String numbers) {
-		this.numbers = Integer.parseInt(numbers);
+	public void setNumbers(int numbers) {
+		this.numbers = numbers;
 	}
 	public String getUserid() {
 		return userid;
@@ -89,12 +84,7 @@ public class TeamVo {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	@Override
-	public String toString() {
-		return "TeamVo [teamname=" + teamname + ", category=" + category + ", theme=" + theme + ", goal=" + goal
-				+ ", content=" + content + ", sdate=" + sdate + ", times=" + times + ", weekend=" + weekend + ", ddate="
-				+ ddate + ", numbers=" + numbers + ", userid=" + userid + "]";
-	}
+	
 	
 	
 

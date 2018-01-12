@@ -30,7 +30,6 @@
 			<!-- 얘를 설정해주면 트랜잭션을 따로 처리 안해줘도 된다. 트랜잭션이란 commit / rollback 등을 뜻함. -->
 		</property>
 	</bean>
-
 <bean id = "viewResolver"
 	class = "org.springframework.web.servlet.view.UrlBasedViewResolver">
 	<property name="viewClass" value = "org.springframework.web.servlet.view.JstlView"></property>

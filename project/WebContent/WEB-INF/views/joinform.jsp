@@ -314,7 +314,7 @@
 						data : {"username" : username}, 
 						success:function(data){
 							alert("성공 확인용")
-							if(data.res != null){
+							if(data != null){
 								alert("중복되었습니다.")
 							}	
 							else{
