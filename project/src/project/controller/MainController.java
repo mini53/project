@@ -41,11 +41,11 @@ public class MainController {
 		return "introduce";
 	}
 
-	@RequestMapping(value="/board.do", method = RequestMethod.GET)
+/*	@RequestMapping(value="/board.do", method = RequestMethod.GET)
 	public String board() {
 		System.out.println("board RequestMapping");
 		return "board";
-	}
+	}*/
 	
 	@RequestMapping(value="/contact.do", method = RequestMethod.GET)
 	public String contact() {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.playdata.admin.board.dao.BoardAdminDao">
+    
+    <select id="boardMenu" resultType="com.playdata.admin.board.model.BoardListDto">
+        select bl.bcode, bl.bname, bl.btype, c.ccode, c.cname, 
+               decode(bl.btype, 5, 'reboard', 
+                                6, 'album', 
+                                7, 'bbs', 
+                                'board') controller  
+        from board_list bl, category c 
+        where bl.ccode = c.ccode <!-- 카테고리 join 보드리스트 -->
+        order by bl.bcode
+    </select>
+    
+</mapper>
+
+<!-- 카테고리를 통해서 리스트를 뽑아오되 형식을 선택해서 리스트를 뽑아오는 것 -->
+
+
+
+
+
+

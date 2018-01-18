@@ -65,6 +65,7 @@
 </nav>
 	<div class="container">
       <div class="row">
+      	
          <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
             <thead>
                <tr>
@@ -75,13 +76,17 @@
                </tr>
             </thead>
             <tbody>
-               <tr>
-                  <td>1</td>
-                  <td><a href="#">안녕하세요</a></td>
-                  <td>김장훈</td>
-                  <td>2018-01-01</td>
-               </tr>
-               <tr>
+               <c:if test="${!empty boardlist}">
+					<c:forEach items="${boardlist}" var="ab" varStatus="status">
+					<tr>
+						<td><c:out value="${ab.bid}"/></td>
+						<td><a href="boarddetail.do"><c:out value="${ab.title}"/></a></td>
+						<td><c:out value="${ab.userid}"/></td>
+						<td><c:out value="${ab.edate}"/></td>
+					</tr>
+					</c:forEach>
+				</c:if>
+             <!--   <tr>
                   <td>2</td>
                   <td><a href="#">2번글</a></td>
                   <td>김진호</td>
@@ -98,7 +103,8 @@
                   <td><a href="#">4번글</a></td>
                   <td>이상욱</td>
                   <td>2018-01-05</td>
-               </tr>
+               </tr> -->
+               </form>
             </tbody>
          </table>
          <a href="write.do" class="btn btn-primary pull-right">글쓰기</a>

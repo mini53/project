@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.playdata.admin.board.controller"/>
+	<context:component-scan base-package="com.playdata.board.controller"/>
+	<context:component-scan base-package="com.playdata.member.controller"/>
+	
+	<!-- servlet은 컨트롤러가 있어야한다 servlet=controller -->
+	<!-- 현재파일에서 크기를 자르고 할 수 없어 pom에서 commons-fileupload으로 해야해 -->
+	<!-- html은 파일을 통채로 넘기기 때문에 확장자, 내용, 경로,...commons-fileupload가 짤라서 얘는 스프링에서 관리하는 둘이 한쌍-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> <!-- spring꺼 /여기서 파일을 올리고 pom에서 잘라-->
+		<property name="defaultEncoding" value="UTF-8"/>
+		<property name="maxUploadSize" value="3145728"/>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="suffix" value=".jsp"/> <!-- preffix가 다르기때문에 정해주지않는다 -->
+	</bean>
+
+</beans>

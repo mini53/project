@@ -9,10 +9,12 @@
 	<typeAliases>
 		<typeAlias alias = "user" type = "project.vo.UserVo"/>
 		<typeAlias alias = "team" type = "project.vo.TeamVo"/>
+		<typeAlias alias = "board" type = "project.vo.BoardVo"/>
 	</typeAliases>
 
 <mappers>
 	<mapper resource = "/project/common/user-mapping.xml"/>
 	<mapper resource = "/project/common/team-mapping.xml"/>
+	<mapper resource = "/project/common/board-mapping.xml"/>
 </mappers>
 </configuration>

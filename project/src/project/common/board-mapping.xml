@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="board">
+
+<select id="BoardListSelect" resultType="board">  
+		select * from boardtest
+    </select>
+
+<select id="BoardDetailSelect" resultType="board"> select * from boardtest where bid=#{bid}</select>
+
+<insert id="BoardInsert" parameterType="board"> insert into boardtest values(#{bid},#{userid},#{title},#{edate}) </insert>
+
+<delete id="BoardDelete" parameterType="board"> delete from boardtest where bid=#{bid} </delete>
+
+<update id="BoardUpdate" parameterType="board"> update boardtest set userid=#{userid}, title=#{title}, edate=#{edate} where bid=#{bid} </update>
+
+</mapper>
